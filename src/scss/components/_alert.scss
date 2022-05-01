@@ -1,0 +1,16 @@
+/* -------------- User-alert ---------------------*/
+@use "@scss/vars" as *;
+.alert {
+  background-color: $background-color;
+  padding: $padding-alert;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  border-radius: $border-radius;
+  border-left: $border-radius solid $text-color;
+  &__text {
+    font-size: $text-font-size;
+    font-weight: 500;
+    color: $text-color;
+  }
+}

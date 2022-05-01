@@ -1,0 +1,87 @@
+/* -------------- Sections ---------------------*/
+@use "@scss/vars" as *;
+@use "@scss/template" as *;
+.section {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  row-gap: 2rem;
+  background-color: $primary-color-gray;
+  border-left: $border-radius solid $background-color;
+  border-radius: $border-radius;
+  &__header {
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.5rem;
+  }
+  &__title {
+    @extend %title;
+  }
+  &__subtitle {
+    @extend %subtitle;
+  }
+  &__content {
+    display: flex;
+    column-gap: 3rem;
+  }
+  &__pre {
+    @extend %main-text;
+  }
+  &__var {
+    color: $var-color;
+  }
+  &__copy {
+    cursor: pointer;
+    width: 3rem;
+    height: 3rem;
+    @media screen and (min-width: 767px) {
+      position: relative;
+      &::before,
+      &::after {
+        --scale: 0;
+        position: absolute;
+        top: -1rem;
+        left: 50%;
+        transform: translateX(-50%) translateY(-100%) scale(var(--scale));
+        transition: 250ms transform;
+        transform-origin: bottom center;
+      }
+      &::before {
+        content: attr(data-tooltip);
+        width: max-content;
+        background-color: $text-color;
+        color: $white-color;
+        padding: $padding-alert;
+        border-radius: $border-radius;
+        font-size: $text-font-size;
+        text-align: center;
+        z-index: 10;
+      }
+      &:hover::before,
+      &:hover::after {
+        --scale: 1;
+      }
+      &:hover::after {
+        content: "";
+        border-radius: 0.2rem;
+        top: -1.2rem;
+        transform: translateX(-50%);
+        border: 8px solid transparent;
+        border-color: $text-color transparent transparent transparent;
+      }
+    }
+  }
+  &__code {
+    color: $text-color;
+  }
+  &__console {
+    color: $console-color;
+  }
+  &__svg {
+    pointer-events: none;
+  }
+  &__result {
+    color: $result-color;
+  }
+}

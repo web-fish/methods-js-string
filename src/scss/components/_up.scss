@@ -1,0 +1,22 @@
+/* -------------- Button up ---------------------*/
+@use "@scss/vars" as *;
+.up {
+  width: 5rem;
+  height: 5rem;
+  background-color: $background-color;
+  border-radius: 50%;
+  position: fixed;
+  inset: auto 2rem 2rem auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &__arrow {
+    width: 2rem;
+    height: 2rem;
+    border: 0.3rem solid $text-color;
+    border-color: transparent transparent $text-color $text-color;
+    border-radius: 0.4rem;
+    transform: rotate(135deg);
+    margin-top: 1rem;
+  }
+}

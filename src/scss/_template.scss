@@ -1,0 +1,29 @@
+@use "vars" as *;
+%section-title {
+  font-weight: 500;
+  font-size: $header-font-size;
+  color: $text-color;
+}
+// @extend %section-title;
+
+%title {
+  font-size: $subtitle-font-size;
+  font-weight: 500;
+  color: $text-color;
+}
+// @extend %title;
+
+%subtitle {
+  font-size: $text-font-size;
+  font-weight: 400;
+  color: $text-color;
+  line-height: 1.2;
+}
+// @extend %subtitle;
+
+%main-text {
+  font-size: $text-font-size;
+  font-weight: 500;
+  line-height: 1.5;
+}
+// @extend %main-text;
